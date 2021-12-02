@@ -1,12 +1,15 @@
-name: Build PosProc
+name: Test
 
 on:
-  workflow_run:
-    workflows: ["Test", "Jest ", "Rails", "Migrations"]
-    branches: ["master"]
-    types: [completed]
+  push:
+    branches:
+      - master
+
 jobs:
- build-staging_colombia:
-  if: ${{ github.event.workflow_run.conclusion == 'success' }}
-  uses: actions-test-dependence/.github/workflows/base.yaml@master
+  build-staging_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: jest job
+        run: |
+          echo "hello Test"
   

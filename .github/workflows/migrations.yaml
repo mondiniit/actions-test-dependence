@@ -1,12 +1,15 @@
-name: Build Migrations
+name: Migrations
 
 on:
-  workflow_run:
-    workflows: ["Test", "Jest ", "Rails", "Migrations"]
-    branches: [ 'master' ]
-    types:
-      - completed
+  push:
+    branches:
+      - master
+
 jobs:
- migration:
-  uses: actions-test-dependence/.github/workflows/base.yaml@master
+  build-staging_migrations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: jest job
+        run: |
+          echo "hello Migrations"
   
