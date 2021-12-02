@@ -7,7 +7,6 @@ on:
     types:
       - completed
 jobs:
- build-staging_colombia:
-  if: "!contains(github.event_name , 'schedule')"
+ migration:
   uses: actions-test-dependence/.github/workflows/base.yaml@master
   
