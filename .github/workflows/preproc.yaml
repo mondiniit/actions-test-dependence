@@ -1,0 +1,13 @@
+name: Build Preproc
+
+on:
+  workflow_run:
+    workflows: ["Test", "Jest ", "Rails", "Migrations"]
+    branches: [ 'master' ]
+    types:
+      - completed
+jobs:
+ build-staging_colombia:
+  if: "!contains(github.event_name , 'schedule')"
+  uses: actions-test-dependence/.github/workflows/base.yaml@master
+  
