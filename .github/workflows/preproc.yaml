@@ -9,5 +9,8 @@ jobs:
   build-staging_test:
     runs-on: ubuntu-latest
     steps:
+      - name: jest job
+        run: |
+          echo "hello Jest" 
       - uses: ahmadnassri/action-workflow-run-wait@v1
   
