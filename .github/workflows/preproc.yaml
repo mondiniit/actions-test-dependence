@@ -2,7 +2,7 @@ name: Build Preproc
 
 on:
   workflow_run:
-    workflows: [Test]
+    workflows: [Test, Jest]
     branches: ["master"]
     types: [completed]
 jobs:
