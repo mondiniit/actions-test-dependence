@@ -2,7 +2,7 @@ name: Build Preproc
 
 on:
   workflow_run:
-    workflows: [Test; Jest; Rails; Migrations]
+    workflows: [Test]
     branches: ["master"]
     types: [completed]
 jobs:
