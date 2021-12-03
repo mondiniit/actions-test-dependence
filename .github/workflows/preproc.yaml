@@ -7,7 +7,7 @@ on:
     types: [completed]
 jobs:
   build-staging_test:
-    needs: [Test, Jest, Rails, Migrations]
+    #needs: [Test, Jest, Rails, Migrations]
     if: ${{ github.event.workflow_run.id == 'Test' }} && ${{ github.event.workflow_run.id == 'Jest' }} && ${{ github.event.workflow_run.id == 'Rails' }} && ${{ github.event.workflow_run.id == 'Migrations' }} && ${{ github.event.workflow_run.conclusion == 'success' }} && contains(github.ref_name, 'master') &&  !contains(github.event_name, 'schedule')
     runs-on: ubuntu-latest
     steps:
